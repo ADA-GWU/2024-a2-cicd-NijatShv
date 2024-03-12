@@ -141,5 +141,4 @@ class WebInterfaceTests {
 		WebElement submitButton = webDriver.findElement(By.id("submit"));
 		submitButton.click();
 	}
-
 }
