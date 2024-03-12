@@ -56,7 +56,7 @@ class WebInterfaceTests {
 	}
 
 	@Test
-	@Order(2)
+	@Order(3)
 	@DisplayName("Check the created user")
 	public void CheckUser() {
 		// Check if the student is added
@@ -74,6 +74,68 @@ class WebInterfaceTests {
 		// Check if the text "Jamal" is present in the page content
 		assert(bodyElementFName.size() == 1);
 		assert(bodyElementLName.size() == 1);
+	}
+	@Test
+	@Order(4)
+	@DisplayName("Check the created User by Name")
+	public void CheckUserBYName(){
+
+		webDriver.get("http://localhost:"+port+"/student/list");
+		List<WebElement> bodyElementFname = webDriver.findElements(By.xpath("//*[contains(text(), 'Nigar')]"));
+
+		try{
+			Thread.sleep(2000);
+
+		} catch (InterruptedException e){
+			throw new RuntimeException(e);
+
+		}
+		assert (bodyElementFname.size() == 1);
+	}
+
+	@Test
+	@Order(5)
+	@DisplayName("Check the created User by Name")
+	public void CheckUserByID(){
+
+		webDriver.get("http://localhost:"+port+"/student/list");
+		List<WebElement> bodyElementID = webDriver.findElements(By.xpath("//*[contains(text(), '1')]"));
+
+		try{
+			Thread.sleep(2000);
+
+		} catch (InterruptedException e){
+			throw new RuntimeException(e);
+
+		}
+		assert (bodyElementID.size() == 1);
+	}
+	@Test
+	@Order(5)
+	@DisplayName("Update User Details")
+	public void UpdateUserDetails(){
+		webDriver.get("http://localhost:"+port+"/student/update?id=1");
+
+		WebElement firstNameInput = webDriver.findElement(By.id("firstName"));
+		WebElement lastNameInput = webDriver.findElement(By.id("lastName"));
+		WebElement emailInput = webDriver.findElement(By.id("email"));
+
+		firstNameInput.clear();
+		lastNameInput.clear();
+		emailInput.clear();
+
+		try {
+			firstNameInput.sendKeys("Nigarr");
+			Thread.sleep(2000);
+			lastNameInput.sendKeys("Salayevali");
+			Thread.sleep(2000);
+			emailInput.sendKeys("nsli@ada.edu.az");
+			Thread.sleep(2000);
+		} catch (Exception ex) {
+			System.out.println(ex);
+		}
+		WebElement submitButton = webDriver.findElement(By.id("submit"));
+		submitButton.click();
 	}
 
 }

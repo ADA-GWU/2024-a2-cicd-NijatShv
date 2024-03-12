@@ -48,4 +48,48 @@ public class FunctionalityTests {
         System.out.printf("Found students: "+students.size());
         assertEquals(2, students.size() );
     }
+    @Test
+    @DisplayName("Search by first Name")
+    public void searchByFirstName(){
+        Student s1 = new Student(1,"Nijat","Sirinov","b@b.com",new Date(),null,null);
+        Student s2 = new Student(2,"Nijat","Shirinov","a@b.com",new Date(),null,null);
+
+        List<Student> sampleStudents = List.of(s1,s2);
+
+        when(studentRepository.findByNameCase("%Nijat%")).thenReturn(sampleStudents);
+
+        Iterable<Student> foundStudents = studentService.getStudentByName("Nijat");
+
+        List<Student> foundStudentList = new ArrayList<>();
+        foundStudents.forEach(foundStudentList::add);
+
+        assertEquals(2, foundStudentList.size());
+
+        for (Student student : foundStudentList) {
+            assertEquals("Nijat", student.getFirstName());
+        }
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
