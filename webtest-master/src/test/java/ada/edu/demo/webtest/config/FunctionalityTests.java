@@ -49,12 +49,13 @@ public class FunctionalityTests {
         assertEquals(2, students.size() );
     }
     @Test
-    @DisplayName("Search by first Name")
-    public void searchByFirstName(){
-        Student s1 = new Student(1,"Nijat","Sirinov","b@b.com",new Date(),null,null);
-        Student s2 = new Student(2,"Nijat","Shirinov","a@b.com",new Date(),null,null);
+    @DisplayName("Search by first name")
+    public void searchByFirstName() {
+        // Create some sample students
+        Student s1 = new Student(1, "Nijat", "Shirinov", "nicat.sirinov.02@gmail.com", new Date(), null, null);
+        Student s2 = new Student(2, "Nijat", "Gurbanov", "nicat.shirinov.02@gmail.com", new Date(), null, null);
 
-        List<Student> sampleStudents = List.of(s1,s2);
+        List<Student> sampleStudents = List.of(s1, s2);
 
         when(studentRepository.findByNameCase("%Nijat%")).thenReturn(sampleStudents);
 
@@ -68,28 +69,7 @@ public class FunctionalityTests {
         for (Student student : foundStudentList) {
             assertEquals("Nijat", student.getFirstName());
         }
-
-
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

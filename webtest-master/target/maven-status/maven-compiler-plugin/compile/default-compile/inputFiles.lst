@@ -1,9 +1,9 @@
-C:\Users\Nijat Shirinov\Desktop\assignment 2 cicd\2024-a2-cicd-NijatShv\webtest-master\src\main\java\ada\edu\demo\webtest\exception\StudentException.java
-C:\Users\Nijat Shirinov\Desktop\assignment 2 cicd\2024-a2-cicd-NijatShv\webtest-master\src\main\java\ada\edu\demo\webtest\repository\StudentRepository.java
-C:\Users\Nijat Shirinov\Desktop\assignment 2 cicd\2024-a2-cicd-NijatShv\webtest-master\src\main\java\ada\edu\demo\webtest\JpademoApplication.java
-C:\Users\Nijat Shirinov\Desktop\assignment 2 cicd\2024-a2-cicd-NijatShv\webtest-master\src\main\java\ada\edu\demo\webtest\entity\Student.java
-C:\Users\Nijat Shirinov\Desktop\assignment 2 cicd\2024-a2-cicd-NijatShv\webtest-master\src\main\java\ada\edu\demo\webtest\exception\GlobalExceptionHandler.java
-C:\Users\Nijat Shirinov\Desktop\assignment 2 cicd\2024-a2-cicd-NijatShv\webtest-master\src\main\java\ada\edu\demo\webtest\service\StudentService.java
-C:\Users\Nijat Shirinov\Desktop\assignment 2 cicd\2024-a2-cicd-NijatShv\webtest-master\src\main\java\ada\edu\demo\webtest\repository\CourseRepository.java
-C:\Users\Nijat Shirinov\Desktop\assignment 2 cicd\2024-a2-cicd-NijatShv\webtest-master\src\main\java\ada\edu\demo\webtest\entity\Course.java
-C:\Users\Nijat Shirinov\Desktop\assignment 2 cicd\2024-a2-cicd-NijatShv\webtest-master\src\main\java\ada\edu\demo\webtest\controller\StudentController.java
+C:\Users\Nijat Shirinov\Desktop\ProductionOperation\morningtry2\morningtry\webtest-master\src\main\java\ada\edu\demo\webtest\entity\Student.java
+C:\Users\Nijat Shirinov\Desktop\ProductionOperation\morningtry2\morningtry\webtest-master\src\main\java\ada\edu\demo\webtest\exception\GlobalExceptionHandler.java
+C:\Users\Nijat Shirinov\Desktop\ProductionOperation\morningtry2\morningtry\webtest-master\src\main\java\ada\edu\demo\webtest\controller\StudentController.java
+C:\Users\Nijat Shirinov\Desktop\ProductionOperation\morningtry2\morningtry\webtest-master\src\main\java\ada\edu\demo\webtest\service\StudentService.java
+C:\Users\Nijat Shirinov\Desktop\ProductionOperation\morningtry2\morningtry\webtest-master\src\main\java\ada\edu\demo\webtest\entity\Course.java
+C:\Users\Nijat Shirinov\Desktop\ProductionOperation\morningtry2\morningtry\webtest-master\src\main\java\ada\edu\demo\webtest\repository\StudentRepository.java
+C:\Users\Nijat Shirinov\Desktop\ProductionOperation\morningtry2\morningtry\webtest-master\src\main\java\ada\edu\demo\webtest\repository\CourseRepository.java
+C:\Users\Nijat Shirinov\Desktop\ProductionOperation\morningtry2\morningtry\webtest-master\src\main\java\ada\edu\demo\webtest\JpademoApplication.java
+C:\Users\Nijat Shirinov\Desktop\ProductionOperation\morningtry2\morningtry\webtest-master\src\main\java\ada\edu\demo\webtest\exception\StudentException.java

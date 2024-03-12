@@ -19,7 +19,7 @@ public class SeleniumConfig {
         options.addArguments("--headless");
 
         WebDriverManager.firefoxdriver().setup();
-//        return new FirefoxDriver(options);
-        return new FirefoxDriver();
+        return new FirefoxDriver(options);
+//        return new FirefoxDriver();
     }
 }

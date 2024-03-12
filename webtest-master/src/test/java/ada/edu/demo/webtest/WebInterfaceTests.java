@@ -26,7 +26,7 @@ class WebInterfaceTests {
 	@Order(1)
 	@DisplayName("Create a user")
 	public void CreateUser() {
-		webDriver.get("http://localhost:"+port+"/student/new");
+		webDriver.get("http://localhost:" + port + "/student/new");
 
 		WebElement studentIdInput = webDriver.findElement(By.id("studentId"));
 		WebElement firstNameInput = webDriver.findElement(By.id("firstName"));
@@ -45,25 +45,25 @@ class WebInterfaceTests {
 			Thread.sleep(2000);
 			emailInput.sendKeys("ns@ada.edu.az");
 			Thread.sleep(2000);
-		}
-		catch (Exception ex) {
+		} catch (Exception ex) {
 			System.out.println(ex);
 		}
 
-		// Find and submit the form (assuming there's a submit button with a specific attribute)
+		// Find and submit the form (assuming there's a submit button with a specific
+		// attribute)
 		WebElement submitButton = webDriver.findElement(By.id("submit"));
 		submitButton.click();
 	}
 
 	@Test
-	@Order(3)
+	@Order(2)
 	@DisplayName("Check the created user")
 	public void CheckUser() {
 		// Check if the student is added
-		webDriver.get("http://localhost:"+port+"/student/list");
+		webDriver.get("http://localhost:" + port + "/student/list");
 		List<WebElement> bodyElementFName = webDriver.findElements(By.xpath("//*[contains(text(), 'Nigar')]"));
 		List<WebElement> bodyElementLName = webDriver.findElements(By.xpath("//*[contains(text(), 'Salayeva')]"));
-		System.out.println("Element result"+bodyElementLName);
+		System.out.println("Element result" + bodyElementLName);
 
 		try {
 			Thread.sleep(2000);
@@ -72,54 +72,57 @@ class WebInterfaceTests {
 		}
 
 		// Check if the text "Jamal" is present in the page content
-		assert(bodyElementFName.size() == 1);
-		assert(bodyElementLName.size() == 1);
+		assert (bodyElementFName.size() == 1);
+		assert (bodyElementLName.size() == 1);
 	}
+
+	@Test
+	@Order(3)
+	@DisplayName("Check the Created User by Name")
+	public void CheckUserByName() {
+		webDriver.get("http://localhost:" + port + "/student/list");
+		List<WebElement> bodyElementFName = webDriver.findElements(By.xpath("//*[contains(text(), 'Nigar')]"));
+
+		// Wait for the results to load
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
+
+		// Check if the text "Nigar" is present in the page content
+		assert (bodyElementFName.size() == 1);
+	}
+
 	@Test
 	@Order(4)
-	@DisplayName("Check the created User by Name")
-	public void CheckUserBYName(){
-
-		webDriver.get("http://localhost:"+port+"/student/list");
-		List<WebElement> bodyElementFname = webDriver.findElements(By.xpath("//*[contains(text(), 'Nigar')]"));
-
-		try{
-			Thread.sleep(2000);
-
-		} catch (InterruptedException e){
-			throw new RuntimeException(e);
-
-		}
-		assert (bodyElementFname.size() == 1);
-	}
-
-	@Test
-	@Order(5)
-	@DisplayName("Check the created User by Name")
-	public void CheckUserByID(){
-
-		webDriver.get("http://localhost:"+port+"/student/list");
+	@DisplayName("Check the Created User by ID")
+	public void CheckUserByID() {
+		webDriver.get("http://localhost:" + port + "/student/list");
 		List<WebElement> bodyElementID = webDriver.findElements(By.xpath("//*[contains(text(), '1')]"));
 
-		try{
+		// Wait for the results to load
+		try {
 			Thread.sleep(2000);
-
-		} catch (InterruptedException e){
+		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
-
 		}
+
+		// Check if the text "Nigar" is present in the page content
 		assert (bodyElementID.size() == 1);
 	}
+
 	@Test
 	@Order(5)
 	@DisplayName("Update User Details")
-	public void UpdateUserDetails(){
-		webDriver.get("http://localhost:"+port+"/student/update?id=1");
+	public void UpdateUserDetails() {
+		webDriver.get("http://localhost:" + port + "/student/update?id=1");
 
 		WebElement firstNameInput = webDriver.findElement(By.id("firstName"));
 		WebElement lastNameInput = webDriver.findElement(By.id("lastName"));
 		WebElement emailInput = webDriver.findElement(By.id("email"));
 
+		// Clear existing text
 		firstNameInput.clear();
 		lastNameInput.clear();
 		emailInput.clear();
@@ -134,6 +137,7 @@ class WebInterfaceTests {
 		} catch (Exception ex) {
 			System.out.println(ex);
 		}
+
 		WebElement submitButton = webDriver.findElement(By.id("submit"));
 		submitButton.click();
 	}
