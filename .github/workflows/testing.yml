@@ -1,4 +1,5 @@
-name: Tesing
+name: Testing
+
 
 on:
   push:
@@ -7,8 +8,6 @@ on:
   pull_request:
     branches:
       -main
-
-
 jobs:
   build:
     runs-on: ubuntu_latest
@@ -21,11 +20,10 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
-      - name: Build with Maven
+      - name: Build Maven
         working-directory: webtest-master
         run: mvn clean package -DskipTests
-
-      - name: Run Tests
+      - name: Run tests
         working-directory: webtest-master
         run: mvn test
-  
+        
